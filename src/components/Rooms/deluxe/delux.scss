@@ -1,0 +1,58 @@
+.delux{
+    border-top: 1px solid grey;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    >h1{
+        color: goldenrod;
+    }
+    >a{
+        color: goldenrod;
+        font-size: 1.5rem;
+    }
+    >.d1{
+        display: flex;
+        padding: 2rem;
+        >div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            >p{
+                margin: 1rem ;
+                color: silver;
+            }
+        }
+    }
+}
+@media screen and  (max-width:1150px){
+    .delux>{
+        
+        .d1{
+            display: flex;
+            flex-direction: column;
+            >img{
+                height: 50%;
+                margin: auto;
+                
+            }
+            
+        }
+    }
+}
+@media screen and  (max-width:650px){
+    .delux>{
+        
+        .d1{
+            
+            >img{
+                width: 50%;
+                margin: auto;
+            }
+            
+        }
+    }
+}

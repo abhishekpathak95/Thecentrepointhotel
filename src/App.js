@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Toaster} from 'react-hot-toast';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
+import Contact from "./components/Contact/Contact";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
+import Footer from "./components/Footer/Footer";
+import Delux from "./components/Rooms/deluxe/Delux";
+import Queen from "./components/Rooms/queen/Queen";
+import Suite from "./components/Rooms/Suiterooms/Suite";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/delux" element={<Delux />} />
+        <Route path="/queen" element={<Queen/>} />
+        <Route path="/suite" element={<Suite/>} />
+      </Routes>
+      <Footer />
+      <Toaster/>
+    </Router>
   );
-}
+};
 
 export default App;
